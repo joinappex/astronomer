@@ -1,1 +1,2 @@
-"sqlmesh [web,bigquery]"
+sqlmesh[bigquery]
+sqlmesh[web]
