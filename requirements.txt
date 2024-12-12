@@ -1,4 +1,4 @@
 # Astro Runtime includes the following pre-installed providers packages: https://docs.astronomer.io/astro/runtime-image-architecture#provider-packages
 apache-airflow-providers-google
-#pydantic==2.10.3
+pydantic[email]~=2.3.0
 sqlmesh[web,bigquery]
