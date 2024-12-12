@@ -1,0 +1,39 @@
+# gateways:
+#   local:
+#     connection:
+#       type: duckdb
+#       database: db.db
+#   bigquery_prod:
+#     connection:
+#       type: bigquery
+#       method: service-account
+#       project: appex-data
+#       execution_project: appex-data
+#       keyfile: "/Users/dorianb/Documents/APPEX/appex-data-6e399421eabb.json"
+#     state_connection:
+#       type: postgres
+#       host: 34.56.124.116
+#       user: sqlmesh
+#       password: "5hsKJv[IS((.|B,>"
+#       database: postgres
+#       port: 5432
+
+model_naming:
+  infer_names: true
+
+# default_gateway: bigquery_prod
+
+model_defaults:
+  dialect: bigquery
+  start: 2020-01-01
+
+environment_catalog_mapping:
+  '^prod$': appex-data
+  '^dev.*': appex-data-imports
+
+physical_schema_mapping:
+  '^base$': zz_base
+  '^base_revenue$': zz_base_revenue
+  '^base_product$': zz_base_product
+  '^core$': zz_core
+  
