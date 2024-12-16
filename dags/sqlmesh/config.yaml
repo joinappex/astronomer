@@ -1,3 +1,22 @@
+gateways:
+  bigquery_prod:
+    connection:
+      type: bigquery
+      method: service-account
+      project: appex-data
+      execution_project: appex-data
+      keyfile: "{{ env_var('sqlmesh_bigquery_service_account_keyfile') }}"
+    state_connection:
+      type: postgres
+      host: 34.56.124.116
+      user: sqlmesh
+      password: "5hsKJv[IS((.|B,>"
+      user: "{{ env_var('sqlmesh_bigquery_user') }}"
+      password: "{{ env_var('sqlmesh_bigquery_password') }}"
+      database: postgres
+      port: 5432
+
+
 # default_scheduler:
 #   type: airflow
 #   airflow_url: http://localhost:8080
