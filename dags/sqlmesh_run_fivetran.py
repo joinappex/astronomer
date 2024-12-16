@@ -25,12 +25,9 @@ with DAG(
     # Fivetran sensor to wait for the sync to complete
     wait_for_fivetran_sync = FivetranSensor(
         task_id='wait_for_fivetran_sync',
-        connector_id='golf_makeover',  # Fivetran connector ID
-        fivetran_conn_id='fivetran_default', 
-        mode='reschedule',  # Frees worker slots while waiting
-        poke_interval=300,  # Check every 5 minutes
-        timeout=3600,  # Timeout after 1 hour
-        always_wait_when_syncing=True,
+        connector_id='golf_makeover',
+        poke_interval=5,
+        completed_after_time="{{ data_interval_end + macros.timedelta(minutes=1) }}",
     )
 
     # Bash task to run sqlmesh command
