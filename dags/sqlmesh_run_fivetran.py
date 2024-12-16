@@ -1,5 +1,5 @@
 from airflow import DAG
-from airflow.providers.fivetran.sensors.fivetran import FivetranSensor
+from fivetran_provider_async.sensors import FivetranSensor
 from airflow.operators.bash import BashOperator
 from datetime import datetime
 
@@ -26,7 +26,7 @@ with DAG(
     wait_for_fivetran_sync = FivetranSensor(
         task_id='wait_for_fivetran_sync',
         connector_id='golf_makeover',  # Fivetran connector ID
-        # fivetran_conn_id='fivetran_default',  # Replace with your Fivetran connection ID if needed
+        fivetran_conn_id='fivetran_default', 
         mode='reschedule',  # Frees worker slots while waiting
         poke_interval=300,  # Check every 5 minutes
         timeout=3600,  # Timeout after 1 hour
