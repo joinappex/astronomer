@@ -16,7 +16,7 @@ with DAG(
     'sqlmesh_run',  # DAG name
     default_args=default_args,
     description='DAG to run sqlmesh',
-    schedule_interval="5,11,18 * * *",  # Set to None for manual trigger
+    schedule_interval="15 5,11,18 * * *",  # Set to None for manual trigger
     start_date=datetime(2024, 1, 1),  # Replace with your desired start date
     catchup=False,  # Don't backfill
 ) as dag:
