@@ -2,15 +2,27 @@ gateways:
   bigquery_prod:
     connection:
       type: bigquery
-      method: service-account
+      method: service-account-json
       project: appex-data
-      execution_project: appex-data
-      keyfile_json: "{{ env_var('sqlmesh_bigquery_service_account_keyfile') }}"
+      execution_project: appex-data 
+      keyfile_json: {
+          "type": "service_account",
+          "project_id": "appex-data",
+          "private_key_id": "6e399421eabb4af0cb864224bbcdf3806ea3c364",
+          "private_key": {{ env_var('sqlmesh_bigquery_user') }},
+          "client_email": "dorian-banutoiu-joinappex-com@appex-data.iam.gserviceaccount.com",
+          "client_id": "114137023060001263447",
+          "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+          "token_uri": "https://oauth2.googleapis.com/token",
+          "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+          "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/dorian-banutoiu-joinappex-com%40appex-data.iam.gserviceaccount.com",
+          "universe_domain": "googleapis.com"
+        }
     state_connection:
       type: postgres
       host: 34.56.124.116
-      user: "{{ env_var('sqlmesh_bigquery_user') }}"
-      password: "{{ env_var('sqlmesh_bigquery_password') }}"
+      user: {{ env_var('sqlmesh_bigquery_user') }}
+      password: {{ env_var('sqlmesh_bigquery_password') }}
       database: postgres
       port: 5432
 
@@ -20,6 +32,7 @@ gateways:
 #   airflow_url: http://localhost:8080
 #   username: admin
 #   password: admin
+#   use_state_connection: true
 
 model_naming:
   infer_names: true
