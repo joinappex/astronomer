@@ -18,6 +18,10 @@ gateways:
           "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/dorian-banutoiu-joinappex-com%40appex-data.iam.gserviceaccount.com",
           "universe_domain": "googleapis.com"
         }
+      scopes:
+        - https://www.googleapis.com/auth/bigquery
+        - https://www.googleapis.com/auth/drive.readonly
+        - https://www.googleapis.com/auth/cloud-platform
     state_connection:
       type: postgres
       host: 34.56.124.116
