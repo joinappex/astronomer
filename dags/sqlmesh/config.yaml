@@ -9,7 +9,7 @@ gateways:
           "type": "service_account",
           "project_id": "appex-data",
           "private_key_id": "6e399421eabb4af0cb864224bbcdf3806ea3c364",
-          "private_key": {{ env_var('sqlmesh_bigquery_user') }},
+          "private_key": {{ env_var('sqlmesh_bigquery_private_key') }},
           "client_email": "dorian-banutoiu-joinappex-com@appex-data.iam.gserviceaccount.com",
           "client_id": "114137023060001263447",
           "auth_uri": "https://accounts.google.com/o/oauth2/auth",
