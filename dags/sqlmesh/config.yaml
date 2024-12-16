@@ -9,7 +9,7 @@ gateways:
           "type": "service_account",
           "project_id": "appex-data",
           "private_key_id": "6e399421eabb4af0cb864224bbcdf3806ea3c364",
-          "private_key": {{ env_var('sqlmesh_bigquery_private_key') }},
+          "private_key": {{ env_var('SQLMESH_BIGQUERY_PRIVATE_KEY') }},
           "client_email": "dorian-banutoiu-joinappex-com@appex-data.iam.gserviceaccount.com",
           "client_id": "114137023060001263447",
           "auth_uri": "https://accounts.google.com/o/oauth2/auth",
@@ -21,8 +21,8 @@ gateways:
     state_connection:
       type: postgres
       host: 34.56.124.116
-      user: {{ env_var('sqlmesh_bigquery_user') }}
-      password: {{ env_var('sqlmesh_bigquery_password') }}
+      user: {{ env_var('SQLMESH_BIGQUERY_USER') }}
+      password: {{ env_var('SQLMESH_BIGQUERY_PASSWORD') }}
       database: postgres
       port: 5432
 
@@ -50,4 +50,3 @@ physical_schema_mapping:
   '^base_revenue$': zz_base_revenue
   '^base_product$': zz_base_product
   '^core$': zz_core
-  
