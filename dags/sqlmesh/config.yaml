@@ -9,8 +9,6 @@ gateways:
     state_connection:
       type: postgres
       host: 34.56.124.116
-      user: sqlmesh
-      password: "5hsKJv[IS((.|B,>"
       user: "{{ env_var('sqlmesh_bigquery_user') }}"
       password: "{{ env_var('sqlmesh_bigquery_password') }}"
       database: postgres
