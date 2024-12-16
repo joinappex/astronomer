@@ -22,7 +22,7 @@ with DAG(
 ) as dag:
 
     # Define the BashOperator task
-    run_sqlmesh = BashOperator(
+    sqlmesh_run = BashOperator(
         task_id='sqlmesh_run',
         bash_command='cd /usr/local/airflow/dags/sqlmesh && sqlmesh run',
     )
