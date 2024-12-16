@@ -1,8 +1,8 @@
-default_scheduler:
-  type: airflow
-  airflow_url: http://localhost:8080
-  username: admin
-  password: admin
+# default_scheduler:
+#   type: airflow
+#   airflow_url: http://localhost:8080
+#   username: admin
+#   password: admin
 
 model_naming:
   infer_names: true
