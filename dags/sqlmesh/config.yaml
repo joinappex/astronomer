@@ -5,7 +5,7 @@ gateways:
       method: service-account
       project: appex-data
       execution_project: appex-data
-      keyfile: "{{ env_var('sqlmesh_bigquery_service_account_keyfile') }}"
+      keyfile_json: "{{ env_var('sqlmesh_bigquery_service_account_keyfile') }}"
     state_connection:
       type: postgres
       host: 34.56.124.116
