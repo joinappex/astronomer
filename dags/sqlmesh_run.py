@@ -23,9 +23,9 @@ with DAG(
 
     # Define the BashOperator task
     run_sqlmesh = BashOperator(
-        task_id='run_sqlmesh',
+        task_id='sqlmesh_run',
         bash_command='cd /usr/local/airflow/dags/sqlmesh && sqlmesh run',
     )
 
     # Add more tasks if needed and define dependencies
-    run_sqlmesh
+    sqlmesh_run
